@@ -18,13 +18,8 @@
 
 	h1 {
 		font-size: 2.8em;
-		/* color: white; */
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
-		line-height: 0;
-		/* text-shadow: 0 0 6px #0008; */
-		/* background: #0008; */
-		/* padding: 0.5rem; */
 	}
 
 p {
