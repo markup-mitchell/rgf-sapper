@@ -18,24 +18,16 @@
 
 	h1 {
 		font-size: 2.8em;
-
+		color: white;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
-	}
-/* 
-	figure {
-		margin: 0 0 1em 0;
-	} */
-
-	/* img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
+		text-shadow: 0 0 10px #000;
 	}
 
-	p {
-		margin: 1em auto;
-	} */
+p {
+  font-size: 1.25rem;
+  color: white;
+}
 
 	@media (min-width: 480px) {
 		h1 {
@@ -50,6 +42,15 @@
 </svelte:head>
 
 <h1>Rather Good Fatherhood</h1>
+<p>
+	Scientists are not sure yet exactly what the term "father" actually means - and if scientists don't know something, nobody does.
+</p>
+<p>
+	So it's up for grabs, basically, and this is me staking my claim. <strong>I will tell you</strong> what it means to <strong>me<strong> over the course of as many blog posts as I can be bothered to write.
+</p>
+<p><strong>You</strong> will digest these words of wisdom and internalise them, papering over whatever internal inconsistencies you discover using your own initiative and experience with self-deceit.</p>
+<p><strong>THAT'S THE DEAL, OK?</strong></p>
+
 <!-- 
 <figure>
 	<img alt='Borat' src='great-success.png'>
