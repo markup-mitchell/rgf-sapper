@@ -18,15 +18,17 @@
 
 	h1 {
 		font-size: 2.8em;
-		color: white;
+		/* color: white; */
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
-		text-shadow: 0 0 10px #000;
+		line-height: 0;
+		/* text-shadow: 0 0 6px #0008; */
+		/* background: #0008; */
+		/* padding: 0.5rem; */
 	}
 
 p {
   font-size: 1.25rem;
-  color: white;
 }
 
 	@media (min-width: 480px) {
@@ -50,9 +52,3 @@ p {
 </p>
 <p><strong>You</strong> will digest these words of wisdom and internalise them, papering over whatever internal inconsistencies you discover using your own initiative and experience with self-deceit.</p>
 <p><strong>THAT'S THE DEAL, OK?</strong></p>
-
-<!-- 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure> -->
