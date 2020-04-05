@@ -10,7 +10,7 @@
 	export let posts;
    export let src = "chess.jpg";
    export let title = "blogpost";
-   export let description = "a blog post description which is probably longer than this. and what happens if it is longer than that? like, much, much longer? do things break?";
+   export let lede = "a blog post description which is probably longer than this. and what happens if it is longer than that? like, much, much longer? do things break?";
    export let date = "2020-04-05";
 </script>
 
@@ -93,7 +93,7 @@
       </div>
       <div class="card-text">
          <h1>{post.title}</h1>
-         <p>{post.description}</p>
+         <p>{post.lede}</p>
       <time>{post.date}</time>
       </div>
    </article>
@@ -103,15 +103,15 @@
 
 <div class="stack">
 
-   <article class="card-wrapper">
+   <!-- <article class="card-wrapper">
       <div class="img-wrapper" style="background-image: url({src});">
       </div>
       <div class="card-text">
          <h1>{title}</h1>
-         <p>{description}</p>
+         <p>{post.lede}</p>
       <time>{date}</time>
       </div>
-   </article>
+   </article> -->
 
    <ul>
 	<!-- {#each posts as post} -->
