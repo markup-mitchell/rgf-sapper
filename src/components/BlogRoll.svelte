@@ -1,5 +1,4 @@
 <script>
-   import BlogCard from "./BlogCard.svelte";
     export let src = "chess.jpg";
    export let title = "blogpost";
    export let description = "a blog post description which is probably longer than this. and what happens if it is longer than that? like, much, much longer? do things break?";
@@ -37,7 +36,7 @@
    }
 
    .img-wrapper {
-      background-position: center;
+      background-position: bottom;
       background-repeat: no-repeat;
       height: 12rem;
       background-size: cover;
