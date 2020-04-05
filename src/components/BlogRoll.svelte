@@ -9,6 +9,7 @@
 <style>
    .stack {
       width: 100%;
+      height: auto;
    }
 
    .stack > * + * {
@@ -17,16 +18,18 @@
 
    .card-wrapper {
       display: flex;
+      flex-direction: column;
       width: 100%;
       border: thin solid #eee;
       border-radius: 4px;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       transition: all 0.2s ease-in-out;
    }
 
    .card-wrapper:hover {
       transition: all 0.2s ease-in-out;
       transform: translateX(-0.25rem);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
    }
 
    .card-text {
@@ -34,15 +37,29 @@
    }
 
    .img-wrapper {
-      width: 50%;
-      height: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 12rem;
       background-size: cover;
+      border-radius: 0.25rem 0.25rem 0 0;
    }
+@media (min-width: 945px) {
+      .card-wrapper {
+         flex-direction: row;
+      }
+   
+      .img-wrapper {
+      flex: 1;
+      height: unset;
+      border-radius: 0.25rem 0 0 0.25rem;
+      }
 
-   img {
-      max-width: 100%;
-      object-fit: cover;
+      .card-text {
+         max-width: 50%;
+      }
    }
+   
+
 </style>
 
 <div class="stack">
