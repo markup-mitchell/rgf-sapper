@@ -1,5 +1,5 @@
 <script>
-   export let image = "../../static/chess.jpg" ;
+   export let src = "chess.jpg";
    export let title = "blogpost";
    export let description = "a blog post description which is probably longer than this.";
    export let date = "2020-04-05";
@@ -7,14 +7,22 @@
 
 <style>
    .cardWrapper {
+      display: flex;
       width: 100%;
+      height: 200px;
       background: red;
+      background-size: cover;
+   }
+
+   img {
+      max-width: 100%;
    }
 </style>
 
 
 
-<article class="cardWrapper" style="background-image: url(`${image}`);">
+<article class="cardWrapper">
+<img {src} alt="">
    <h1>{title}</h1>
    <p>{description}</p>
    <time>{date}</time>
