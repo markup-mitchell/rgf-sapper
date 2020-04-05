@@ -1,9 +1,21 @@
+<script context="module">
+	export function preload({ params, query }) {
+		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
+         console.log(posts);
+		});
+   }
+   
+</script>
+
 <script>
-    export let src = "chess.jpg";
+   export let posts;
+   console.log(posts);
+   export let src = "chess.jpg";
    export let title = "blogpost";
    export let description = "a blog post description which is probably longer than this. and what happens if it is longer than that? like, much, much longer? do things break?";
    export let date = "2020-04-05";
 </script>
+
 
 <style>
    .stack {
@@ -42,7 +54,7 @@
       background-size: cover;
       border-radius: 0.25rem 0.25rem 0 0;
    }
-@media (min-width: 945px) {
+@media (min-width: 1024px) {
       .card-wrapper {
          flex-direction: row;
       }
@@ -83,4 +95,15 @@
       </div>
    </article>
 
+   <ul>
+	<!-- {#each posts as post} -->
+
+		<!-- we're using the non-standard `rel=prefetch` attribute to
+				tell Sapper to load the data for the page as soon as
+				the user hovers over the link or taps it, instead of
+				waiting for the 'click' event -->
+
+		<!-- <li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li>
+	{/each}
+</ul> -->
 </div>

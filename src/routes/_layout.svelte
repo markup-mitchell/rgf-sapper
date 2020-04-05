@@ -8,8 +8,10 @@
 	.page-grid {
 		display: grid;
 		grid-template-columns: 20px 1fr 20px;
-		grid-auto-rows: min-content;
+		grid-auto-rows: max-content;
 	}
+
+
 
 	@media (min-width: 640px) {
 		.page-grid {
@@ -50,7 +52,6 @@
 
 <div class="page-grid">
 <Nav {segment}/>
-
 <main>
 	<slot></slot>
 </main>
