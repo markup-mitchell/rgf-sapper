@@ -9,6 +9,7 @@
 		padding-top: 0.5rem;
 		position: sticky;
 		top: 0;
+		z-index: 10;
 	}
 
 	@media (min-width: 640px) {
@@ -22,13 +23,13 @@
 	}
 
 	svg {
-		/* transition: all .2s ease-in-out; */
 		width: 40px;
 		height: auto;
 		fill: #333;
 		stroke-width: 5px;
 		stroke: #333;
 		transition: all 0.3s ease-in-out;
+		mix-blend-mode: difference;
 	}
 
 

@@ -30,15 +30,22 @@
 		letter-spacing: 1px;
 		line-height: 1.5;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		grid-gap: 6rem;
 	}
 	@media (min-width: 640px) {
 		main {
 			grid-column: 3;
 			grid-row: 3;
+		}
 	}
+
+	@media (min-width: 945px) {
+		main {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 	}
+	
 </style>
 
 <div class="page-grid">
