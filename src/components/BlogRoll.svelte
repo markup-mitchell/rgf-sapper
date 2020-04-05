@@ -66,12 +66,22 @@
 
    <article class="card-wrapper">
       <div class="img-wrapper" style="background-image: url({src});">
-         <!-- <img {src} alt=""> -->
       </div>
-   <div class="card-text">
-   <h1>{title}</h1>
-   <p>{description}</p>
-   <time>{date}</time>
-   </div>
-</article>
+      <div class="card-text">
+         <h1>{title}</h1>
+         <p>{description}</p>
+      <time>{date}</time>
+      </div>
+   </article>
+
+   <article class="card-wrapper">
+      <div class="img-wrapper" style="background-image: url({src});">
+      </div>
+      <div class="card-text">
+         <h1>{title}</h1>
+         <p>{description}</p>
+      <time>{date}</time>
+      </div>
+   </article>
+
 </div>

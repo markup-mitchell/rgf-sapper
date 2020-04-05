@@ -9,8 +9,6 @@
 		display: grid;
 		grid-template-columns: 20px 1fr 20px;
 		grid-auto-rows: min-content;
-
-		
 	}
 
 	@media (min-width: 640px) {
