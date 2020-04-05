@@ -12,7 +12,7 @@
    console.log(posts);
    export let src = "chess.jpg";
    export let title = "blogpost";
-   export let description = "a blog post description which is probably longer than this. and what happens if it is longer than that? like, much, much longer? do things break?";
+   export let lede = "a blog post description which is probably longer than this. and what happens if it is longer than that? like, much, much longer? do things break?";
    export let date = "2020-04-05";
 </script>
 
@@ -80,7 +80,7 @@
       </div>
       <div class="card-text">
          <h1>{title}</h1>
-         <p>{description}</p>
+         <p>{lede}</p>
       <time>{date}</time>
       </div>
    </article>
@@ -90,7 +90,7 @@
       </div>
       <div class="card-text">
          <h1>{title}</h1>
-         <p>{description}</p>
+         <p>{lede}</p>
       <time>{date}</time>
       </div>
    </article>
