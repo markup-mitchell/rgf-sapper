@@ -13,15 +13,21 @@
       background-size: cover;
    }
 
+   .img-wrapper {
+      max-width: 50%;
+   }
+
    img {
-      max-width: 100%;
+      object-fit: scale-down;
    }
 </style>
 
 
 
 <article class="cardWrapper">
+<div class="img-wrapper">
 <img {src} alt="">
+</div>
    <h1>{title}</h1>
    <p>{description}</p>
    <time>{date}</time>

@@ -18,8 +18,6 @@
    .card-wrapper {
       display: flex;
       width: 100%;
-      height: 200px;
-      background-size: cover;
       border: thin solid #eee;
       border-radius: 4px;
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -35,29 +33,28 @@
       padding: 1rem;
    }
 
+   .img-wrapper {
+      width: 50%;
+      height: auto;
+      background-size: cover;
+   }
+
    img {
-      max-width: 50%;
+      max-width: 100%;
+      object-fit: cover;
    }
 </style>
 
 <div class="stack">
 
    <article class="card-wrapper">
-<img {src} alt="">
+      <div class="img-wrapper" style="background-image: url({src});">
+         <!-- <img {src} alt=""> -->
+      </div>
    <div class="card-text">
    <h1>{title}</h1>
    <p>{description}</p>
    <time>{date}</time>
    </div>
 </article>
-
-<article class="card-wrapper">
-<img {src} alt="">
-   <div class="card-text">
-   <h1>{title}</h1>
-   <p>{description}</p>
-   <time>{date}</time>
-   </div>
-</article>
-
 </div>
