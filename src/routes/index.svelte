@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-
+  import BlogRoll from '../components/BlogRoll.svelte';
   onMount(() => {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -38,6 +38,7 @@ p {
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
+<div class="">
 <h1>Rather Good Fatherhood</h1>
 <p>
 	Scientists are not sure yet exactly what the term "father" actually means - and if scientists don't know something, nobody does.
@@ -47,3 +48,7 @@ p {
 </p>
 <p><strong>You</strong> will digest these words of wisdom and internalise them, papering over whatever internal inconsistencies you discover using your own initiative and experience with self-deceit.</p>
 <p><strong>THAT'S THE DEAL, OK?</strong></p>
+</div>
+
+<BlogRoll/>
+

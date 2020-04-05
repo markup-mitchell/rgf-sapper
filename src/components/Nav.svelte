@@ -26,13 +26,16 @@
 		width: 40px;
 		height: auto;
 		fill: #333;
+		stroke-width: 5px;
+		stroke: #333;
 		transition: all 0.3s ease-in-out;
 	}
 
 
 	svg:hover {
-		fill: red;
+		/* fill: white; */
 		transition: all 0.2s ease-in-out;
+		transform: scale(1.1);
 	}
 
 	ul {
