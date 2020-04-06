@@ -69,6 +69,10 @@
 		margin: 0 0 1em 0;
 		line-height: 1.5;
 	}
+
+	.gridlist {
+		display: grid;
+	}
 </style>
 
 <svelte:head>
@@ -77,7 +81,7 @@
 
 <h1>Recent posts</h1>
 
-<ul>
+<ul class="gridlist">
 	{#each posts as post}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
