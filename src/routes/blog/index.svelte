@@ -8,7 +8,6 @@
 
 <script>
 	export let posts;
-	console.log(posts)
 </script>
 
 <style>
@@ -41,7 +40,7 @@
       padding: 1rem;
       flex-shrink: 1; 
       flex-grow: 1; 
-      flex-basis: 60%;
+      flex-basis: 50%;
    }
 
    .img-wrapper {
@@ -93,6 +92,7 @@
        <div class="img-wrapper">
          <img src={post.featured_image} alt="">
       </div>
+      <!-- https://res.cloudinary.com/dthkwbvgt/image/upload/c_limit,e_art:fes,g_center,h_300,q_auto:good,w_400/v1586188351/sample.jpg -->
    </article>
       </li>
 	{/each}
