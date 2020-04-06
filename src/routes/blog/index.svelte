@@ -32,7 +32,7 @@
 
    .card-wrapper:hover {
       transition: all 0.2s ease-in-out;
-      transform: translateY(-2px);
+      transform: scale(1.01);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
    }
 
