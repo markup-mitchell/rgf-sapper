@@ -32,8 +32,8 @@
 
    .card-wrapper:hover {
       transition: all 0.2s ease-in-out;
-      transform: scale(1.01);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
    }
 
    .card-text {
@@ -45,6 +45,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      pointer-events: none;
    }
 
    h1 {
@@ -99,13 +100,13 @@
 		<article class="card-wrapper">
      
       <div class="card-text">
-      <div>
-         <h1>{post.title}</h1>
-         <p>{post.lede}</p>
+         <div>
+            <h1>{post.title}</h1>
+            <p>{post.lede}</p>
+         </div>
+         <time>{post.date}</time>
       </div>
-      <time>{post.date}</time>
-      </div>
-       <div class="img-wrapper">
+      <div class="img-wrapper">
          <img src={post.featured_image} alt="">
       </div>
    </article>
