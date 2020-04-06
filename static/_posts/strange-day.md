@@ -2,7 +2,8 @@
 layout: blog
 title: Strange Day
 lede: Alchemy and Autism
-featured_image: /uploads/alchemist_symbols-1-.jpg
+featured_image: >-
+  https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586203771/alchemist_symbols_njjf5k.jpg
 date: 2020-04-06T15:25:02.054Z
 tags:
   - autism
