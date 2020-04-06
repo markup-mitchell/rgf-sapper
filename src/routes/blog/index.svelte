@@ -12,9 +12,9 @@
 </script>
 
 <style>
-.stack {
-      width: 100%;
-      height: auto;
+.grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
    }
 
    .stack > * + * {
@@ -23,7 +23,8 @@
 
    .card-wrapper {
       display: flex;
-      flex-direction: column;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
       width: 100%;
       border: thin solid #eee;
       border-radius: 4px;
@@ -44,13 +45,15 @@
    .img-wrapper {
       background-position: bottom;
       background-repeat: no-repeat;
-      height: 12rem;
       background-size: cover;
       border-radius: 0.25rem 0.25rem 0 0;
+      width: 12rem;
+      flex: 1 1 auto;
    }
 @media (min-width: 1024px) {
       .card-wrapper {
-         flex-direction: row;
+         flex-direction: column;
+         height: 12rem;
       }
    
       .img-wrapper {
@@ -66,13 +69,11 @@
    
 
 	ul {
-		margin: 0 0 1em 0;
+      margin: 0;
+      padding: 0;
 		line-height: 1.5;
-	}
-
-	.gridlist {
-		display: grid;
-	}
+   }
+   
 </style>
 
 <svelte:head>
@@ -81,7 +82,7 @@
 
 <h1>Recent posts</h1>
 
-<ul class="gridlist">
+<ul class="grid">
 	{#each posts as post}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
