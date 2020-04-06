@@ -45,8 +45,8 @@ p {
   }
 
   .blogroll {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column:1;
+    grid-row: 2;
   }
 
   	@media (min-width: 480px) {
@@ -67,6 +67,10 @@ p {
 		.grid {
 			grid-template-columns: 1fr 1fr;
 		}
+    .blogroll {
+    grid-column: 2;
+    grid-row: 1;
+  }
 	}
 </style>
 
