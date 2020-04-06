@@ -3,7 +3,7 @@ layout: blog
 title: Needs Must
 lede: What the heck is this site anyway? You must be dying to know!
 featured_image: >-
-  https://res.cloudinary.com/dthkwbvgt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1586191634/chess_hidiv3.jpg
+  https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586191634/chess_hidiv3.jpg
 date: 2020-03-23T20:40:00.000Z
 tags:
   - lockdown
