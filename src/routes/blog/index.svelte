@@ -47,6 +47,11 @@
       justify-content: space-between;
    }
 
+   h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+   }
+
    .img-wrapper {
       flex-grow: 1;
       flex-shrink: 0;
@@ -70,6 +75,11 @@
       display: inline-flex;
    }
    
+   a {
+      display: inline-flex;
+      text-decoration-line: none;
+   }
+
 </style>
 
 <svelte:head>
@@ -84,8 +94,8 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-		<!-- <li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li> -->
-      <li>
+		<!-- <li></li> -->
+      <li><a rel='prefetch' href='blog/{post.slug}'>
 		<article class="card-wrapper">
      
       <div class="card-text">
@@ -98,8 +108,8 @@
        <div class="img-wrapper">
          <img src={post.featured_image} alt="">
       </div>
-      <!-- https://res.cloudinary.com/dthkwbvgt/image/upload/c_limit,e_art:fes,g_center,h_300,q_auto:good,w_400/v1586188351/sample.jpg -->
    </article>
+   </a>
       </li>
 	{/each}
 </ul>

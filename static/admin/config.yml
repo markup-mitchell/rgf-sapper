@@ -21,7 +21,12 @@ collections:
           widget: image,
           required: false,
         }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "LL",
+        }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 media_library:
