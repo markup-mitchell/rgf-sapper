@@ -89,7 +89,7 @@
 		<!-- <li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li> -->
 
 		<article class="card-wrapper">
-      <div class="img-wrapper" style="background-image: url({post.featured_image});">
+      <div class="img-wrapper" style="background-image: url({post.featured_image.src});">
       </div>
       <div class="card-text">
          <h1>{post.title}</h1>
