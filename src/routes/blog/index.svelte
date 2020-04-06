@@ -32,7 +32,7 @@
 
    .card-wrapper:hover {
       transition: all 0.2s ease-in-out;
-      transform: scale(1.01);
+      transform: translateY(-2px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
    }
 
@@ -40,7 +40,11 @@
       padding: 1rem;
       flex-shrink: 1; 
       flex-grow: 1; 
-      flex-basis: 50%;
+      flex-basis: 60%;
+      min-height: 10rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
    }
 
    .img-wrapper {
@@ -85,8 +89,10 @@
 		<article class="card-wrapper">
      
       <div class="card-text">
+      <div>
          <h1>{post.title}</h1>
          <p>{post.lede}</p>
+      </div>
       <time>{post.date}</time>
       </div>
        <div class="img-wrapper">
