@@ -25,8 +25,6 @@
 p {
   font-size: 1.25rem;
 }
-
-
   
   .grid {
 		display: grid;
@@ -36,6 +34,7 @@ p {
 		letter-spacing: 1px;
 		line-height: 1.5;
 		grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
 		grid-gap: 6rem;
 	}
 
@@ -45,7 +44,7 @@ p {
   }
 
   .blogroll {
-    grid-column:1;
+    grid-column: 1;
     grid-row: 2;
   }
 
@@ -91,8 +90,8 @@ p {
 <p><strong>You</strong> will digest these words of wisdom and internalise them, papering over whatever internal inconsistencies you discover using your own initiative and experience with self-deceit.</p>
 <p><strong>THAT'S THE DEAL, OK?</strong></p>
 </div>
-</div>
 <div class="blogroll">
 <BlogRoll/>
+</div>
 </div>
 

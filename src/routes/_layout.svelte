@@ -22,29 +22,16 @@
 	}
 
 	main {
-		position: relative;
 		width: 100%;
-		background-color: transparent;
 		box-sizing: border-box;
 		grid-column: 2/2;
 		grid-row: 3;
-		/* text-align: justify; */
-		letter-spacing: 1px;
-		line-height: 1.5;
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 6rem;
+
 	}
 	@media (min-width: 640px) {
 		main {
 			grid-column: 3;
 			grid-row: 3;
-		}
-	}
-
-	@media (min-width: 945px) {
-		main {
-			grid-template-columns: 1fr 1fr;
 		}
 	}
 	
