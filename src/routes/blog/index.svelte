@@ -15,11 +15,7 @@
 .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 1rem;
-   }
-
-   .stack > * + * {
-      margin-top: 1rem;      
+      grid-gap: 2rem;
    }
 
    .card-wrapper {
@@ -49,7 +45,7 @@
    }
 
    .img-wrapper {
-       flex-grow: 1;
+      flex-grow: 1;
       flex-shrink: 0;
       flex-basis: 10rem;
    }
@@ -88,13 +84,14 @@
 		<!-- <li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li> -->
       <li>
 		<article class="card-wrapper">
-      <div class="img-wrapper">
-         <img src={post.featured_image} alt="">
-      </div>
+     
       <div class="card-text">
          <h1>{post.title}</h1>
          <p>{post.lede}</p>
       <time>{post.date}</time>
+      </div>
+       <div class="img-wrapper">
+         <img src={post.featured_image} alt="">
       </div>
    </article>
       </li>
