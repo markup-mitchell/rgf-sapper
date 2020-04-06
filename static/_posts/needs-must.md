@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Needs Must
-lede: What the heck is this site anyway? You must be dying to know!
+lede: 'What the heck is this site anyway? You must be dying to know! '
 featured_image: >-
   https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586191634/chess_hidiv3.jpg
 date: 2020-03-23T20:40:00.000Z
