@@ -3,7 +3,7 @@
 </script>
 
 <style>
-	.circle {
+	/* .circle {
 		width: 6rem;
 		height: 6rem;
 		border-radius: 50%;
@@ -11,7 +11,7 @@
 		position: fixed;
 		top: -2rem;
 		left: -1rem;
-}
+} */
 	nav {
 		grid-column: 2;
 		grid-row: 2 ;
