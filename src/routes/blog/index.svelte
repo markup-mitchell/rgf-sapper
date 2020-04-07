@@ -11,21 +11,12 @@
    import BlogCard from "../../components/BlogCard.svelte";
    
    export let posts;
-<<<<<<< HEAD
-   let postsByDate = posts.sort((a,b) => {
-         a = new Date(a.date);
-         b = new Date(b.date);
-    return a > b ? -1 : a < b ? 1 : 0;
-   });
-   
-=======
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTags = new Set([].concat.apply([], posts.map(post => {
       return post.tags;
    })));
 
->>>>>>> master
 </script>
 
 <style>
@@ -63,16 +54,6 @@
 	<title>Blog</title>
 </svelte:head>
 
-<<<<<<< HEAD
-<h1 class="pageHeading">Recent posts</h1>
-
-<ul class="grid">
-	{#each posts as {title,lede,date,featured_image, slug}}
-		<!-- we're using the non-standard `rel=prefetch`  attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-=======
 <div class="page-header">
    <h1>Posts</h1>
    {#each [...allTags] as tag}
@@ -88,7 +69,6 @@
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
 		<!-- <li></li> -->
->>>>>>> master
       <li><a rel='prefetch' href='blog/{slug}'>
 		<BlogCard
          {title}
