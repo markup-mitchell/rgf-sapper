@@ -54,13 +54,6 @@ p {
 		}
 	}
 
-	/* @media (min-width: 640px) {
-		.grid {
-			grid-column: 1;
-			grid-row: 2;
-		}
-	} */
-
 
 	@media (min-width: 945px) {
 		.grid {
