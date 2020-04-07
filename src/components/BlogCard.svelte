@@ -73,7 +73,7 @@
    }
    
    .padded {
-      padding: 1rem;
+      padding: 1.5rem;
    }
 
 </style>

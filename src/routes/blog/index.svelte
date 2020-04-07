@@ -12,6 +12,7 @@
    
    export let posts;
    let tagPosts = posts;
+   let tagFilter = null;
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTags = new Set([].concat.apply([], posts.map(post => {
@@ -19,8 +20,12 @@
    })));
 
    function filterPosts(tag) {
-      tagPosts = posts.filter(post => post.tags.includes(tag))
-      console.log(tagPosts);
+      tagPosts = posts.filter(post => post.tags.includes(tag));
+      setTagFilter(tag);
+   }
+
+   function setTagFilter(tag) {
+      tagFilter = tag;
    }
 
 
@@ -52,23 +57,39 @@
    .page-header {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-end;
       padding-bottom: 2rem;
    }
 
    .tag-btn {
       border: none;
       font-size: var(--text-base);
-      /* background: var(--black); */
+      /* font-weight: bold; */
+      letter-spacing: 1px;
+      /* text-transform: uppercase; */
+      /* background: #555; */
       background: transparent;
       border: solid thin var(--black);
-      border-radius: 1rem;
+      border-radius: 0.25rem;
+      /* color: white; */
       color: var(--black);
+      /* opacity: 0.6; */
       padding: 0.5rem;
       margin: 0.1rem;
+      transition: all 0.2s ease;
+      
+   }
+
+   .tag-btn:hover {
+      background-color: #555;
+      color: white;
+      transition: all 0.2s ease;
    }
  
+   .tags{
+      grid-column: 1;
+      grid-row: 1;
+   }
 
 </style>
 
@@ -77,8 +98,15 @@
 </svelte:head>
 
 <div class="page-header">
-   <h1>Posts</h1>
-   <ul>
+   <h1>Posts {#if tagFilter} tagged <strong>{tagFilter}</strong> {/if}</h1>
+  
+</div>
+
+
+<ul class="grid">
+<div class="tags">
+<h2>Tags</h2>
+<ul class="gridded">
    {#each [...allTags] as tag}
       <li>
          <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
@@ -86,9 +114,6 @@
    {/each}
    </ul>
 </div>
-
-
-<ul class="grid">
 	{#each tagPosts as {title,lede,date,featured_image,tags, slug}}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
