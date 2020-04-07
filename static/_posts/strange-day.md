@@ -1,9 +1,9 @@
 ---
 layout: blog
 title: Strange Day
-lede: Alchemy and Autism
+lede: Alchemy & Autism
 featured_image: >-
-  https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586203771/alchemist_symbols_njjf5k.jpg
+  https://res.cloudinary.com/dthkwbvgt/image/upload/t_BlogCardThumb/v1586267897/668473906_2ee0e3f97b_c_efyzdk.jpg
 date: 2020-04-06T15:25:02.054Z
 tags:
   - autism
