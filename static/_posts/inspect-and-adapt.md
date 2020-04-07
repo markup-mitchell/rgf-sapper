@@ -3,7 +3,7 @@ layout: blog
 title: Inspect and Adapt
 lede: How can I become a better teacher?
 featured_image: >-
-  https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586210805/eye-pyramid_ilsotv.jpg
+  https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586269153/6454779679_be8a197574_w_aqosur.jpg
 date: 2020-04-01T09:46:00.000Z
 tags:
   - lockdown
