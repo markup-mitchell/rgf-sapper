@@ -11,11 +11,18 @@
    import BlogCard from "../../components/BlogCard.svelte";
    
    export let posts;
+   let tagPosts = posts;
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTags = new Set([].concat.apply([], posts.map(post => {
       return post.tags;
    })));
+
+   function filterPosts(tag) {
+      tagPosts = posts.filter(post => post.tags.includes(tag))
+      console.log(tagPosts);
+   }
+
 
 </script>
 
@@ -57,13 +64,13 @@
 <div class="page-header">
    <h1>Posts</h1>
    {#each [...allTags] as tag}
-      <button>{tag}</button>
+      <button on:click={() => filterPosts(tag)}>{tag}</button>
    {/each}
 </div>
 
 
 <ul class="grid">
-	{#each posts as {title,lede,date,featured_image,tags, slug}}
+	{#each tagPosts as {title,lede,date,featured_image,tags, slug}}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
