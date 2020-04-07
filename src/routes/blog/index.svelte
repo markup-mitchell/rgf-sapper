@@ -9,7 +9,14 @@
 <script>
    import moment from "moment";
    import BlogCard from "../../components/BlogCard.svelte";
+   
    export let posts;
+
+   // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
+   let allTags = new Set([].concat.apply([], posts.map(post => {
+      return post.tags;
+   })));
+
 </script>
 
 <style>
@@ -50,6 +57,9 @@
 
 <div class="page-header">
    <h1>Posts</h1>
+   {#each [...allTags] as tag}
+      <button>{tag}</button>
+   {/each}
 </div>
 
 
