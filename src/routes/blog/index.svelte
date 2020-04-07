@@ -65,7 +65,7 @@
 
    .tag-btn {
       border: none;
-      font-size: var(--text-base);
+      font-size: var(--text-sm);
       /* font-weight: bold; */
       letter-spacing: 1px;
       /* text-transform: uppercase; */
