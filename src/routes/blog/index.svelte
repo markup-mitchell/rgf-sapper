@@ -10,15 +10,20 @@
    import moment from "moment";
    import BlogCard from "../../components/BlogCard.svelte";
    export let posts;
+   let postsByDate = posts.sort((a,b) => {
+         a = new Date(a.date);
+         b = new Date(b.date);
+    return a > b ? -1 : a < b ? 1 : 0;
+   });
+   
 </script>
 
 <style>
-.grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 2rem;
-   }
-
+   .grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+         grid-gap: 2rem;
+      }
    
 	ul {
       margin: 0;
@@ -42,49 +47,22 @@
 	<title>Blog</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<h1 class="pageHeading">Recent posts</h1>
 
 <ul class="grid">
-	{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
+	{#each posts as {title,lede,date,featured_image, slug}}
+		<!-- we're using the non-standard `rel=prefetch`  attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-		<!-- <li></li> -->
-      <li><a rel='prefetch' href='blog/{post.slug}'>
+      <li><a rel='prefetch' href='blog/{slug}'>
 		<BlogCard
-         title={post.title}
-         lede={post.lede}
-         date={post.date}
-         image={post.featured_image}
+         {title}
+         {lede}
+         {date}
+         {featured_image}
       />
    </a>
       </li>
 	{/each}
 </ul>
-
-
-<div class="stack">
-
-   <!-- <article class="card-wrapper">
-      <div class="img-wrapper" style="background-image: url({src});">
-      </div>
-      <div class="card-text">
-         <h1>{title}</h1>
-         <p>{post.lede}</p>
-      <time>{date}</time>
-      </div>
-   </article> -->
-
-   <ul>
-	<!-- {#each posts as post} -->
-
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-
-		<!-- <li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li>
-	{/each}
-</ul> -->
-</div>

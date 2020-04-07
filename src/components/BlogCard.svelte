@@ -1,6 +1,6 @@
 <script>
    import moment from "moment";
-   export let title, lede, date, image;
+   export let title, lede, date, featured_image;
    const longDate = moment(date).format("LL");
 </script>
 
@@ -12,7 +12,7 @@
       flex-grow: 1; 
       min-width: 300px;
       overflow: hidden;
-      border: thin solid #eee;
+      border: thin solid #ddd;
       border-radius: 0.25rem;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       transition: all 0.2s ease-in-out;
@@ -74,6 +74,6 @@
          <time>{longDate}</time>
       </div>
       <div class="img-wrapper">
-         <img src={image} alt="">
+         <img src={featured_image} alt="">
       </div>
    </article>
