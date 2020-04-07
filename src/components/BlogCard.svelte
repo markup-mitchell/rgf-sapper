@@ -37,7 +37,7 @@
    }
 
    h1 {
-      font-size: 1.75rem;
+      font-size: var(--text-2xl);
       font-weight: bold;
    }
 
@@ -59,7 +59,7 @@
 
    time {
       text-transform: uppercase;
-      font-size: 1rem;
+      font-size: var(--font-sm);
    }
 </style>
 
