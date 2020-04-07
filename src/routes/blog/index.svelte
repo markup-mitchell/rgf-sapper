@@ -63,9 +63,9 @@
 
 <div class="page-header">
    <h1>Posts</h1>
-   {#each [...allTags] as tag}
+   <!-- {#each [...allTags] as tag}
       <button on:click={() => filterPosts(tag)}>{tag}</button>
-   {/each}
+   {/each} -->
 </div>
 
 
