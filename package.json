@@ -1,5 +1,5 @@
 {
-  "name": "TODO",
+  "name": "rgf",
   "description": "TODO",
   "version": "0.0.1",
   "scripts": {
@@ -21,6 +21,7 @@
     "sirv": "^0.4.0"
   },
   "devDependencies": {
+    "moment": "^2.24.0",
     "npm-run-all": "^4.1.5",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
