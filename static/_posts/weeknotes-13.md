@@ -1,11 +1,9 @@
 ---
 layout: blog
 title: Weeknotes 13
-lede: >-
-  First week of national coronavirus lockdown = first week of home full time
-  childcare and home learning. Yikes.
+lede: Week 1 of lockdown is Week 1 of home schooling - yikes!
 featured_image: >-
-  https://res.cloudinary.com/dthkwbvgt/image/upload/t_BlogCardThumb/v1586210988/small_IMG_20200325_095317_qseorn.jpg
+  https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586210988/small_IMG_20200325_095317_qseorn.jpg
 date: 2020-03-28T11:08:00.000Z
 tags:
   - weeknotes
