@@ -36,27 +36,36 @@
       text-decoration-line: none;
    }
 
+   .page-header {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 2rem;
+   }
+
 </style>
 
 <svelte:head>
 	<title>Blog</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<div class="page-header">
+   <h1>Posts</h1>
+</div>
+
 
 <ul class="grid">
-	{#each posts as post}
+	{#each posts as {title,lede,date,featured_image,tags, slug}}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
 		<!-- <li></li> -->
-      <li><a rel='prefetch' href='blog/{post.slug}'>
+      <li><a rel='prefetch' href='blog/{slug}'>
 		<BlogCard
-         title={post.title}
-         lede={post.lede}
-         date={post.date}
-         image={post.featured_image}
+         {title}
+         {lede}
+         {date}
+         {featured_image}
       />
    </a>
       </li>

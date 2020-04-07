@@ -1,6 +1,6 @@
 <script>
    import moment from "moment";
-   export let title, lede, date, image;
+   export let title, lede, date, featured_image;
    const longDate = moment(date).format("LL");
 </script>
 
@@ -16,6 +16,7 @@
       border-radius: 0.25rem;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       transition: all 0.2s ease-in-out;
+      background-color: white;
    }
 
    .card-wrapper:hover {
@@ -59,8 +60,16 @@
 
    time {
       text-transform: uppercase;
-      font-size: var(--font-sm);
+      font-size: var(--font-xs);
    }
+
+   hr {
+      color: var(--black);
+      opacity: .3;
+      height: 0;
+      margin: 0 0 0.5rem;
+   }
+
 </style>
 
 
@@ -71,9 +80,12 @@
             <h1>{title}</h1>
             <p>{lede}</p>
          </div>
+         <div>
+            <hr>
          <time>{longDate}</time>
+         </div>
       </div>
       <div class="img-wrapper">
-         <img src={image} alt="">
+         <img src={featured_image} alt="">
       </div>
    </article>

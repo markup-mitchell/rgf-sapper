@@ -6,6 +6,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   color: #333;
+  background-color: floralwhite;
 }
 
 /* #sapper {
@@ -24,6 +25,10 @@ body {
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
   --text-6xl: 4rem;
+
+  /* colors */
+
+  --black: #333;
 }
 
 h1,
@@ -36,11 +41,14 @@ h6 {
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
-  word-spacing: 0.5rem;
 }
 
 h1 {
   font-size: 2em;
+}
+
+p {
+  font-size: var(--text-lg);
 }
 
 a {
@@ -61,3 +69,8 @@ code {
     font-size: 16px;
   }
 }
+
+/* .page-heading {
+  text-align: center;
+  font-weight: bold;
+} */
