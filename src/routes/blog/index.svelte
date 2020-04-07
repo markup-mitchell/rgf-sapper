@@ -51,9 +51,24 @@
 
    .page-header {
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       padding-bottom: 2rem;
    }
+
+   .tag-btn {
+      border: none;
+      font-size: var(--text-base);
+      /* background: var(--black); */
+      background: transparent;
+      border: solid thin var(--black);
+      border-radius: 1rem;
+      color: var(--black);
+      padding: 0.5rem;
+      margin: 0.1rem;
+   }
+ 
 
 </style>
 
@@ -63,9 +78,13 @@
 
 <div class="page-header">
    <h1>Posts</h1>
-   <!-- {#each [...allTags] as tag}
-      <button on:click={() => filterPosts(tag)}>{tag}</button>
-   {/each} -->
+   <ul>
+   {#each [...allTags] as tag}
+      <li>
+         <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
+      </li>
+   {/each}
+   </ul>
 </div>
 
 
