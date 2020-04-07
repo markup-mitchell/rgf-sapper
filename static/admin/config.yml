@@ -20,6 +20,8 @@ collections:
           name: "featured_image",
           widget: image,
           required: true,
+          fields:
+          - {name: alt, label: Alt text, widget: string}
         }
       - {
           label: "Publish Date",
