@@ -8,6 +8,8 @@
 
 <script>
    import moment from "moment";
+
+   import fade from "svelte/transition";
    import BlogCard from "../../components/BlogCard.svelte";
    
    export let posts;
@@ -98,7 +100,7 @@
 </svelte:head>
 
 <div class="page-header">
-   <h1>Posts {#if tagFilter} tagged <strong>{tagFilter}</strong> {/if}</h1>
+   <h1>Posts {#if tagFilter}tagged <strong>{tagFilter}</strong>{/if}</h1>
   
 </div>
 
