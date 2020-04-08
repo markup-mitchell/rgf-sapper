@@ -9,13 +9,14 @@
 <script>
    import moment from "moment";
 
-   import fade from "svelte/transition";
+   import { fade, slide } from "svelte/transition";
    import TransitionWrapper from '../../components/TransitionWrapper.svelte';
    import BlogCard from "../../components/BlogCard.svelte";
    
    export let posts;
    let tagPosts = posts;
    let tagFilter = null;
+   let showTags = false;
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTags = new Set([].concat.apply([], posts.map(post => {
@@ -29,6 +30,15 @@
 
    function setTagFilter(tag) {
       tagFilter = tag;
+   }
+
+   function clearTagFilter() {
+      tagFilter = null;
+   }
+
+   function toggleTags() { 
+      showTags = !showTags;
+      console.log(showTags);
    }
 
 
@@ -95,8 +105,11 @@
    }
  
    .tags{
-      grid-column: 1;
-      grid-row: 1;
+      /* grid-column: 1/-1;
+      grid-row: 1; */
+      /* text-align: center; */
+      position: fixed;
+      top: 20px;
    }
 
 </style>
@@ -115,21 +128,33 @@
    {:else}
    <h2>all posts</h2>
    {/if}
-  
+   <input type="checkbox" bind:checked={showTags}/>
+
+    {#if showTags}
+      <p >
+         Hide Tags
+      </p>
+      {:else}
+      <p >
+         Show tags
+      </p>
+      {/if}
+
 </div>
 
 
-<ul class="grid">
-<div class="tags">
-<h2>Tags</h2>
-<ul class="gridded">
+<div class="grid">
+{#if showTags}
+<div class="tags" transition:slide>
+<ul>
    {#each [...allTags] as tag}
-      <li>
+      <li >
          <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
       </li>
    {/each}
    </ul>
 </div>
+{/if}
 	{#each tagPosts as {title,lede,date,featured_image,tags, slug}}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
@@ -146,5 +171,5 @@
    </a>
       </li>
 	{/each}
-</ul>
+</div>
 </TransitionWrapper>
