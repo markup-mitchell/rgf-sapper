@@ -18,13 +18,12 @@
 
 	h1 {
 		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
+		margin: 0;
 	}
 
-p {
+/* p {
   font-size: 1.25rem;
-}
+} */
   
   .grid {
 		display: grid;
@@ -34,13 +33,13 @@ p {
 		letter-spacing: 1px;
 		line-height: 1.5;
 		grid-template-columns: 1fr;
-    grid-auto-rows: max-content;
-		grid-gap: 6rem;
+    grid-auto-rows: min-content;
+		grid-gap: 2rem;
 	}
 
   .text {
-    grid-column: 1;
-    grid-row: 1;
+    grid-column: 1/ span 2;
+    grid-row: 2;
   }
 
   .blogroll {
@@ -50,14 +49,15 @@ p {
 
   	@media (min-width: 480px) {
 		h1 {
-			font-size: 4em;
+			grid-column: 1/-1;
+			grid-row: 1;
 		}
 	}
 
 
 	@media (min-width: 945px) {
 		.grid {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 </style>
@@ -69,8 +69,8 @@ p {
 
 <TransitionWrapper>
 <div class="grid">
-<div class="text">
 <h1>Rather Good Fatherhood</h1>
+<div class="text">
 <p>
 	Scientists are not sure yet exactly what the term "father" actually means - and if scientists don't know something, nobody does.
 </p>
