@@ -15,7 +15,7 @@
 
 	@media (min-width: 640px) {
 		.page-grid {
-			grid-template-columns: 20px max-content 1fr 40px;
+			grid-template-columns: 20px max-content 1fr 80px;
 			align-items: start;
 			grid-gap: 1rem;
 		}
