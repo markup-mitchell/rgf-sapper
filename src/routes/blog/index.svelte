@@ -77,7 +77,7 @@
       /* background: #555; */
       background: transparent;
       border: solid thin var(--black);
-      border-radius: 0.25rem;
+      border-radius: 2px;
       /* color: white; */
       color: var(--black);
       /* opacity: 0.6; */
