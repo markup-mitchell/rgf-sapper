@@ -40,6 +40,11 @@
          grid-gap: 1.5rem;
       }
    
+   h2 {
+      text-transform: capitalize;
+      font-weight: bold;
+   }
+
 	ul {
       margin: 0;
       padding: 0;
@@ -59,8 +64,8 @@
    .page-header {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 2rem;
+      align-items: center;
+      padding-bottom: 4rem;
    }
 
    .tag-btn {
@@ -100,7 +105,14 @@
 </svelte:head>
 
 <div class="page-header">
-   <h1>Posts {#if tagFilter}tagged <strong>{tagFilter}</strong>{/if}</h1>
+<h1>Blog</h1>
+   {#if tagFilter}
+      <h2>
+         {tagFilter}
+      </h2>
+   {:else}
+   <h2>all posts</h2>
+   {/if}
   
 </div>
 
