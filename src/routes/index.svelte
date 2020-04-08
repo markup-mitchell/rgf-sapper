@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import BlogRoll from '../components/BlogRoll.svelte';
+  import TransitionWrapper from '../components/TransitionWrapper.svelte';
   onMount(() => {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -59,10 +59,6 @@ p {
 		.grid {
 			grid-template-columns: 1fr 1fr;
 		}
-    .blogroll {
-    grid-column: 2;
-    grid-row: 1;
-  }
 	}
 </style>
 
@@ -71,6 +67,7 @@ p {
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
+<TransitionWrapper>
 <div class="grid">
 <div class="text">
 <h1>Rather Good Fatherhood</h1>
@@ -83,8 +80,4 @@ p {
 <p><strong>You</strong> will digest these words of wisdom and internalise them, papering over whatever internal inconsistencies you discover using your own initiative and experience with self-deceit.</p>
 <p><strong>THAT'S THE DEAL, OK?</strong></p>
 </div>
-<div class="blogroll">
-<BlogRoll/>
-</div>
-</div>
-
+</TransitionWrapper>

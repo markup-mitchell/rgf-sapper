@@ -10,6 +10,7 @@
    import moment from "moment";
 
    import fade from "svelte/transition";
+   import TransitionWrapper from '../../components/TransitionWrapper.svelte';
    import BlogCard from "../../components/BlogCard.svelte";
    
    export let posts;
@@ -104,6 +105,7 @@
 	<title>Blog</title>
 </svelte:head>
 
+<TransitionWrapper>
 <div class="page-header">
 <h1>Blog</h1>
    {#if tagFilter}
@@ -145,3 +147,4 @@
       </li>
 	{/each}
 </ul>
+</TransitionWrapper>
