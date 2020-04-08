@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Inspect and Adapt
+title: Inspect & Adapt
 lede: How can I become a better teacher?
 featured_image: >-
   https://res.cloudinary.com/dthkwbvgt/image/upload/t_blogcard/v1586269153/6454779679_be8a197574_w_aqosur.jpg
@@ -13,9 +13,9 @@ tags:
   - learning
   - improvement
 ---
-I'm lucky enough to able to give the kids my full attention (more or less!) during this global health crisis. I'm not trying to fit in remote work around keeping them entertained - never mind educated - and I know there'd be a **lot** more stress in our house if I was.
+I'm lucky enough to able to give the kids my full attention (more or less) during this global health crisis. I'm not attempting to fit in remote work around keeping them entertained - never mind educated - and I know there'd be a **lot** more stress in our house if I was.
 
-So I'm trying to observe what works and what doesn't in our routine and amend it accordingly.
+So I'm trying to observe what works and what doesn't in our routine and amend things accordingly.
 
 This is the basic "inspect and adapt" approach used in some software development practices.
 
@@ -27,11 +27,11 @@ I'm running into an similar issue when doing numeracy and literacy exercises wit
 
 The upshot of this is:
 
-- we lose sight of the central concept being learned
-- we lose momentum and make less progress
-- K gets frustrated
-- I get annoyed
-- I risk creating negative associations with the exercise
+* we lose sight of the central concept being learned
+* we lose momentum and make less progress
+* K gets frustrated
+* I get annoyed
+* I risk creating negative associations with the exercise
 
 ## Action
 
@@ -46,7 +46,3 @@ Split the tasks out into their own sections.
 It's easy to say the latter is the best choice, but we'll need to see how receptive he is to it. I may need extra incentives if the activity is repetetive and boring. 
 
 So there's an experiment for me to try!
-
-
-
-
