@@ -95,7 +95,8 @@
       padding: 0.5rem;
       margin: 0.1rem;
       transition: all 0.2s ease;
-      
+      white-space: nowrap;
+      background-color: white;
    }
 
    .tag-btn:hover {
@@ -110,6 +111,12 @@
       /* text-align: center; */
       position: fixed;
       top: 20px;
+      right: 0px;
+      max-width: 40%;
+      overflow: scroll;
+      height: 100%;
+      /* margin-right: 10px; */
+      text-align: right;
    }
 
 </style>
@@ -145,8 +152,8 @@
 
 <div class="grid">
 {#if showTags}
-<div class="tags" transition:slide>
-<ul>
+<div class="tags" >
+<ul transition:slide>
    {#each [...allTags] as tag}
       <li >
          <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
