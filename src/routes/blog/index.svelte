@@ -79,9 +79,11 @@
    }
 
    .page-header {
+      position: relative;
       display: flex;
       flex-direction: column;
       padding-bottom: 4rem;
+      grid-column: 1/-1;
    }
 
    .tag-btn {
@@ -116,6 +118,7 @@
 
    .flex {
       display: flex;
+      align-items: baseline;
    }
 
    svg {
@@ -141,10 +144,36 @@
       z-index: 10;
    }
 
+   h2 {
+      font-weight: normal;
+      margin: 0;
+   }
+
+
+   .clear-tag {
+      margin-left: 0.75rem;
+      padding: 0;
+   }
+
+   .clear-tag__icon {
+      height: var(--text-base);
+      opacity: 0.3;
+   }
+
    button:focus {
       outline: none;
       /* this is bad. how to do focus? invert? v.solid line? */
    }
+
+   .shavings {
+      position: absolute;
+      top: 7rem;
+      left: -10rem;
+      bottom: 0;
+      opacity: 0.5;
+      z-index: -1;
+      transform: rotate(-20deg);
+	}
 
    @media (min-width: 945px) {
       .page-header {
@@ -158,25 +187,30 @@
 </svelte:head>
 
 <TransitionWrapper>
-   <div class="page-header">
-      <h1>Blog</h1>
-      <div class="flex">
-         {#if tagFilter}
-            <button on:click={clearTagFilter}>clear</button>
-            <h2>
-               {tagFilter}
-            </h2>
-         {:else}
-         <h2>all posts</h2>
-         {/if}
-      </div>
-   </div>
 
   
 
 
 <div class="grid">
-
+<div class="page-header">
+      <h1>Blog</h1>
+      <div class="flex">
+         {#if tagFilter}
+            <h2>
+               {tagFilter}
+            </h2>
+           <button class="clear-tag" on:click={clearTagFilter}>
+        <svg class="clear-tag__icon" viewbox="0 0 20 20">
+         <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
+      </svg>
+      </button>
+         {:else}
+         <h2>all posts</h2>
+         {/if}
+      </div>
+      <img class="shavings" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586378624/shavings_ogvg1s.png" alt="pencil shavings">
+   </div>
+ 
 {#if showTags}
 <div class="tags" >
 <ul transition:fade>

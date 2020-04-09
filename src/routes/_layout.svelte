@@ -24,15 +24,10 @@
 		top: -10%;
 		right: -10rem;
 		opacity: 0.3;
+		z-index: -1;
 	}
 
-	.shavings {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		height: 10rem;
-		opacity: 0.8;
-	}
+
 
 	@media (min-width: 640px) {
 		.page-grid {
