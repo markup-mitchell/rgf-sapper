@@ -9,7 +9,7 @@
 <script>
    import moment from "moment";
 
-   import { fade, slide } from "svelte/transition";
+   import { fade, slide, blur } from "svelte/transition";
    import TransitionWrapper from '../../components/TransitionWrapper.svelte';
    import BlogCard from "../../components/BlogCard.svelte";
    
@@ -34,6 +34,7 @@
 
    function clearTagFilter() {
       tagFilter = null;
+      tagPosts = posts;
    }
 
    function toggleTags() { 
@@ -119,6 +120,18 @@
       text-align: right;
    }
 
+   .flex {
+      display: flex;
+   }
+
+   svg {
+      transition: all 0.2s ease;
+   }
+
+   svg:hover {
+      fill: red;
+      transition: all 0.2s ease;
+   }
 </style>
 
 <svelte:head>
@@ -128,24 +141,25 @@
 <TransitionWrapper>
 <div class="page-header">
 <h1>Blog</h1>
+   <div class="flex">
    {#if tagFilter}
       <h2>
          {tagFilter}
       </h2>
+      <button on:click={clearTagFilter} class="tag-btn">clear</button>
    {:else}
    <h2>all posts</h2>
    {/if}
+   </div>
    <input type="checkbox" bind:checked={showTags}/>
 
+        <svg width="40" height="40">
     {#if showTags}
-      <p >
-         Hide Tags
-      </p>
+         <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
       {:else}
-      <p >
-         Show tags
-      </p>
+         <path in:fade d="M0,10 L0,2 L2,0 L10,0 L20,10 L10,20 L0,10 Z M4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 Z"></path>
       {/if}
+      </svg>
 
 </div>
 
