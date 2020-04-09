@@ -18,7 +18,7 @@
 		padding-top: 0.5rem;
 		position: sticky;
 		top: 0;
-		z-index: 11;
+		z-index: 8;
 	}
 
 	

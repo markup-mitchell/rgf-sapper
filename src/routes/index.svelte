@@ -20,10 +20,6 @@
 		font-size: 2.8em;
 		margin: 0;
 	}
-
-/* p {
-  font-size: 1.25rem;
-} */
   
   .grid {
 		display: grid;
@@ -39,11 +35,6 @@
 
   .text {
     grid-column: 1/ span 2;
-    grid-row: 2;
-  }
-
-  .blogroll {
-    grid-column: 1;
     grid-row: 2;
   }
 

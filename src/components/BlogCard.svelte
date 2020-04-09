@@ -63,14 +63,6 @@
       text-transform: uppercase;
       font-size: var(--font-xs);
    }
-
-   hr {
-      background-color: var(--black);
-      opacity: .3;
-      height: 1px;
-      border: none;
-      margin: 0;
-   }
    
    .padded {
       padding: 1.5rem;
@@ -86,7 +78,6 @@
             <h1>{title}</h1>
             <p>{lede}</p>
          </div>
-         <hr>
          <time class="card-text__date padded">{longDate}</time>
       </div>
       <div class="img-wrapper">

@@ -46,7 +46,12 @@
 </script>
 
 <style>
+
+:root {
+  --hud-margin: 0.5rem;
+}
    .grid {
+       
          display: grid;
          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
          grid-gap: 2rem;
@@ -76,23 +81,17 @@
    .page-header {
       display: flex;
       flex-direction: column;
-      align-items: center;
       padding-bottom: 4rem;
    }
 
    .tag-btn {
       border: none;
       font-size: var(--text-sm);
-      /* font-weight: bold; */
       letter-spacing: 1px;
-      /* text-transform: uppercase; */
-      /* background: #555; */
       background: transparent;
       border: solid thin var(--black);
       border-radius: 2px;
-      /* color: white; */
       color: var(--black);
-      /* opacity: 0.6; */
       padding: 0.5rem;
       margin: 0.1rem;
       transition: all 0.2s ease;
@@ -106,17 +105,12 @@
       transition: all 0.2s ease;
    }
  
-   .tags{
-      /* grid-column: 1/-1;
-      grid-row: 1; */
-      /* text-align: center; */
+   .tags {
       position: fixed;
-      top: 20px;
-      right: 0px;
-      max-width: 40%;
-      overflow: scroll;
+      top: 3rem;
+      right: 0.5rem;
+      max-width: 30%;
       height: 100%;
-      /* margin-right: 10px; */
       text-align: right;
    }
 
@@ -126,11 +120,36 @@
 
    svg {
       transition: all 0.2s ease;
+      pointer-events: none;
    }
 
    svg:hover {
       fill: red;
       transition: all 0.2s ease;
+   }
+
+   button {
+      border:  none;
+      background-color: transparent;
+   }
+
+   .tag-toggle {
+      position: fixed;
+      top: var(--hud-margin);
+      right: var(--hud-margin);
+      padding: 0;
+      z-index: 10;
+   }
+
+   button:focus {
+      outline: none;
+      /* this is bad. how to do focus? invert? v.solid line? */
+   }
+
+   @media (min-width: 945px) {
+      .page-header {
+         align-items: center;
+      }
    }
 </style>
 
@@ -139,35 +158,28 @@
 </svelte:head>
 
 <TransitionWrapper>
-<div class="page-header">
-<h1>Blog</h1>
-   <div class="flex">
-   {#if tagFilter}
-      <h2>
-         {tagFilter}
-      </h2>
-      <button on:click={clearTagFilter} class="tag-btn">clear</button>
-   {:else}
-   <h2>all posts</h2>
-   {/if}
+   <div class="page-header">
+      <h1>Blog</h1>
+      <div class="flex">
+         {#if tagFilter}
+            <button on:click={clearTagFilter}>clear</button>
+            <h2>
+               {tagFilter}
+            </h2>
+         {:else}
+         <h2>all posts</h2>
+         {/if}
+      </div>
    </div>
-   <input type="checkbox" bind:checked={showTags}/>
 
-        <svg width="40" height="40">
-    {#if showTags}
-         <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
-      {:else}
-         <path in:fade d="M0,10 L0,2 L2,0 L10,0 L20,10 L10,20 L0,10 Z M4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 Z"></path>
-      {/if}
-      </svg>
-
-</div>
+  
 
 
 <div class="grid">
+
 {#if showTags}
 <div class="tags" >
-<ul transition:slide>
+<ul transition:fade>
    {#each [...allTags] as tag}
       <li >
          <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
@@ -193,4 +205,15 @@
       </li>
 	{/each}
 </div>
+
+<button class="tag-toggle" on:click={toggleTags}>
+        <svg width="30" height="30" viewbox="0 0 20 20">
+    {#if showTags}
+         <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
+      {:else}
+         <path in:fade d="M0,10 L0,2 L2,0 L10,0 L20,10 L10,20 L0,10 Z M4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 Z"></path>
+      {/if}
+      </svg>
+      </button>   
+
 </TransitionWrapper>
