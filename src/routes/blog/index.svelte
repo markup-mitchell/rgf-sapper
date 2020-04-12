@@ -19,9 +19,11 @@
    let showTags = true;
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
-   let allTags = new Set([].concat.apply([], posts.map(post => {
+   let allTagsArray = [].concat.apply([], posts.map(post => {
       return post.tags;
-   })));
+   })).sort();
+
+   let allTagsAlphabetised = new Set(allTagsArray);
 
    function filterPosts(tag) {
       tagPosts = posts.filter(post => post.tags.includes(tag));
@@ -215,7 +217,7 @@
 <div class="tags">
    <h2>Tags</h2>
    <ul>
-      {#each [...allTags] as tag}
+      {#each [...allTagsAlphabetised] as tag}
          <li >
             <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
          </li>
@@ -223,7 +225,6 @@
    </ul>
 </div>
 {/if}
-
 	{#each tagPosts as {title,lede,date,featured_image,tags, slug}}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
