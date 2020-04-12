@@ -7,15 +7,16 @@
 </script>
 
 <script>
-   import moment from "moment";
+  import moment from "moment";
 
-   import fade from "svelte/transition";
+   import { fade } from "svelte/transition";
    import TransitionWrapper from '../../components/TransitionWrapper.svelte';
    import BlogCard from "../../components/BlogCard.svelte";
    
    export let posts;
    let tagPosts = posts;
    let tagFilter = null;
+   let showTags = false;
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTags = new Set([].concat.apply([], posts.map(post => {
@@ -31,7 +32,15 @@
       tagFilter = tag;
    }
 
+   function clearTagFilter() {
+      tagFilter = null;
+      tagPosts = posts;
+   }
 
+   function toggleTags() { 
+      showTags = !showTags;
+      console.log(showTags);
+   }
 </script>
 
 <style>
