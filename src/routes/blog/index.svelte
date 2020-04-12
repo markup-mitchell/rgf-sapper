@@ -16,11 +16,7 @@
    export let posts;
    let tagPosts = posts;
    let tagFilter = null;
-<<<<<<< HEAD
-   let showTags = false;
-=======
    let showTags = true;
->>>>>>> @{-1}
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTagsArray = [].concat.apply([], posts.map(post => {
@@ -42,15 +38,6 @@
       tagFilter = null;
       tagPosts = posts;
    }
-<<<<<<< HEAD
-=======
-
-   function toggleTags() { 
-      showTags = !showTags;
-      console.log(showTags);
-   }
-
->>>>>>> @{-1}
 
    function toggleTags() { 
       showTags = !showTags;
