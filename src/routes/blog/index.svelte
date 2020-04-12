@@ -60,6 +60,7 @@
    h2 {
       text-transform: capitalize;
       font-weight: bold;
+      margin-bottom: 1.125rem;
    }
 
 	ul {
@@ -83,7 +84,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 4rem;
+      padding-top: 2rem;
       grid-column: 1/-1;
    }
 
@@ -118,7 +119,7 @@
 
    .flex {
       display: flex;
-      align-items: center;
+      align-items: baseline;
    }
 
    svg {
@@ -134,20 +135,6 @@
       border:  none;
       background-color: transparent;
    }
-/* 
-   .tag-toggle {
-      position: fixed;
-      top: var(--hud-margin);
-      right: var(--hud-margin);
-      padding: 0;
-      z-index: 10;
-   } */
-
-   h2 {
-      font-weight: normal;
-      margin: 0;
-   }
-
 
    .clear-tag {
       margin: 6px 0 0 6px;
@@ -181,6 +168,7 @@
    @media (min-width: 945px) {
       .page-header {
          align-items: center;
+         margin-bottom: 3rem;
       }
    }
 </style>
@@ -224,13 +212,14 @@
    </div>
  
 {#if showTags}
-<div class="tags" >
-<ul transition:fade>
-   {#each [...allTags] as tag}
-      <li >
-         <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
-      </li>
-   {/each}
+<div class="tags">
+   <h2>Tags</h2>
+   <ul>
+      {#each [...allTags] as tag}
+         <li >
+            <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
+         </li>
+      {/each}
    </ul>
 </div>
 {/if}
