@@ -47,7 +47,7 @@
 	
 </style>
 
-<img class="coffee-ring" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586371378/coffee__ring--transparent_a8y5x9.png" alt="coffee ring">
+<!-- <img class="coffee-ring" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586371378/coffee__ring--transparent_a8y5x9.png" alt="coffee ring"> -->
 <!-- <img class="shavings" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586378624/shavings_ogvg1s.png" alt="pencil shavings" > -->
 <div class="page-grid">
 <Nav {segment}/>

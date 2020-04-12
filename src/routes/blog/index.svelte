@@ -82,6 +82,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      align-items: center;
       padding-bottom: 4rem;
       grid-column: 1/-1;
    }
@@ -98,7 +99,6 @@
       margin: 0.1rem;
       transition: all 0.2s ease;
       white-space: nowrap;
-      background-color: white;
    }
 
    .tag-btn:hover {
@@ -107,14 +107,14 @@
       transition: all 0.2s ease;
    }
  
-   .tags {
+   /* .tags {
       position: fixed;
       top: 3rem;
       right: 0.5rem;
       max-width: 30%;
       height: 100%;
       text-align: right;
-   }
+   } */
 
    .flex {
       display: flex;
@@ -135,14 +135,14 @@
       border:  none;
       background-color: transparent;
    }
-
+/* 
    .tag-toggle {
       position: fixed;
       top: var(--hud-margin);
       right: var(--hud-margin);
       padding: 0;
       z-index: 10;
-   }
+   } */
 
    h2 {
       font-weight: normal;
@@ -193,22 +193,31 @@
 
 <div class="grid">
 <div class="page-header">
-      <h1>Blog</h1>
+   <h1>Blog</h1>
       <div class="flex">
          {#if tagFilter}
             <h2>
                {tagFilter}
             </h2>
            <button class="clear-tag" on:click={clearTagFilter}>
-        <svg class="clear-tag__icon" viewbox="0 0 20 20">
-         <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
-      </svg>
-      </button>
+               <svg class="clear-tag__icon" viewbox="0 0 20 20">
+                  <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
+               </svg>
+            </button>
          {:else}
-         <h2>all posts</h2>
+            <h2>all posts</h2>
          {/if}
+         <button class="tag-toggle" on:click={toggleTags}>
+            <svg width="30" height="30" viewbox="0 0 20 20">
+               {#if showTags}
+                  <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
+               {:else}
+                  <path in:fade d="M0,10 L0,2 L2,0 L10,0 L20,10 L10,20 L0,10 Z M4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 Z"></path>
+               {/if}
+            </svg>
+         </button> 
       </div>
-      <img class="shavings" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586378624/shavings_ogvg1s.png" alt="pencil shavings">
+      <!-- <img class="shavings" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586378624/shavings_ogvg1s.png" alt="pencil shavings"> -->
    </div>
  
 {#if showTags}
@@ -222,6 +231,7 @@
    </ul>
 </div>
 {/if}
+
 	{#each tagPosts as {title,lede,date,featured_image,tags, slug}}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
@@ -240,14 +250,6 @@
 	{/each}
 </div>
 
-<button class="tag-toggle" on:click={toggleTags}>
-        <svg width="30" height="30" viewbox="0 0 20 20">
-    {#if showTags}
-         <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
-      {:else}
-         <path in:fade d="M0,10 L0,2 L2,0 L10,0 L20,10 L10,20 L0,10 Z M4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 Z"></path>
-      {/if}
-      </svg>
-      </button>   
+  
 
 </TransitionWrapper>
