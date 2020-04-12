@@ -16,7 +16,7 @@
    export let posts;
    let tagPosts = posts;
    let tagFilter = null;
-   let showTags = false;
+   let showTags = true;
 
    // tags from each post get put in an array which is flattened with concat and duplicates eliminated by set
    let allTags = new Set([].concat.apply([], posts.map(post => {
@@ -201,13 +201,13 @@
             </h2>
            <button class="clear-tag" on:click={clearTagFilter}>
                <svg class="clear-tag__icon" viewbox="0 0 20 20">
-                  <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
+                  <polygon points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
                </svg>
             </button>
          {:else}
             <h2>all posts</h2>
          {/if}
-         <button class="tag-toggle" on:click={toggleTags}>
+         <!-- <button class="tag-toggle" on:click={toggleTags}>
             <svg width="30" height="30" viewbox="0 0 20 20">
                {#if showTags}
                   <polygon in:fade points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"></polygon>
@@ -215,7 +215,7 @@
                   <path in:fade d="M0,10 L0,2 L2,0 L10,0 L20,10 L10,20 L0,10 Z M4.5,6 C5.32842712,6 6,5.32842712 6,4.5 C6,3.67157288 5.32842712,3 4.5,3 C3.67157288,3 3,3.67157288 3,4.5 C3,5.32842712 3.67157288,6 4.5,6 Z"></path>
                {/if}
             </svg>
-         </button> 
+         </button>  -->
       </div>
       <!-- <img class="shavings" src="https://res.cloudinary.com/dthkwbvgt/image/upload/v1586378624/shavings_ogvg1s.png" alt="pencil shavings"> -->
    </div>
