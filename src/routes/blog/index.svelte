@@ -154,7 +154,7 @@
       outline: none;
       /* this is bad. how to do focus? invert? v.solid line? */
    }
-
+/* 
    .shavings {
       position: absolute;
       top: 7rem;
@@ -163,7 +163,7 @@
       opacity: 0.5;
       z-index: -1;
       transform: rotate(-20deg);
-	}
+	} */
 
    @media (min-width: 945px) {
       .page-header {
@@ -216,7 +216,7 @@
    <h2>Tags</h2>
    <ul>
       {#each [...allTagsAlphabetised] as tag}
-         <li >
+         <li>
             <button class="tag-btn" on:click={() => filterPosts(tag)}>{tag}</button>
          </li>
       {/each}
@@ -229,7 +229,7 @@
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
 		<!-- <li></li> -->
-      <li><a rel='prefetch' href='blog/{slug}'>
+      <a rel='prefetch' href='blog/{slug}'>
 		<BlogCard
          {title}
          {lede}
@@ -237,7 +237,6 @@
          {featured_image}
       />
    </a>
-      </li>
 	{/each}
 </div>
 
