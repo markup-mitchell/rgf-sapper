@@ -118,12 +118,11 @@
 
    .flex {
       display: flex;
-      align-items: baseline;
+      align-items: center;
    }
 
    svg {
       transition: all 0.2s ease;
-      pointer-events: none;
    }
 
    svg:hover {
@@ -151,13 +150,17 @@
 
 
    .clear-tag {
-      margin-left: 0.75rem;
+      margin: 6px 0 0 6px;
       padding: 0;
    }
 
    .clear-tag__icon {
       height: var(--text-base);
       opacity: 0.3;
+   }
+
+   .clear-tag__icon:hover {
+      fill: red;
    }
 
    button:focus {
