@@ -60,7 +60,8 @@
 
 	h1 {
 		font-size: 2.8em;
-		margin: 0;
+		margin-bottom: 1rem;
+      text-align: center;
 	}
   
   .grid {
@@ -73,18 +74,6 @@
 		grid-template-columns: 1fr;
     grid-auto-rows: min-content;
 		grid-gap: 2rem;
-	}
-
-  .text {
-    grid-column: 1/ span 2;
-    grid-row: 2;
-  }
-
-  	@media (min-width: 480px) {
-		h1 {
-			grid-column: 1/-1;
-			grid-row: 1;
-		}
 	}
 
 
