@@ -93,8 +93,8 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
-      .grid {
-       
+      .blog-grid {
+         grid-column: 1/-1;
          display: grid;
          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
          grid-gap: 2rem;
@@ -226,7 +226,7 @@
 
 <div class="blog-grid">
 <div class="page-header">
-   <h1>Blog</h1>
+   <h1>Rather Good Fatherhood</h1>
       <div class="flex">
          {#if tagFilter}
             <h2>
